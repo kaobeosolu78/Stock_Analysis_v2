@@ -1,5 +1,5 @@
-from trends import singlegtrend,gtrend,load_obj
-from stocks import stock,stock_store
+from sentiment.Trends import singlegtrend,gtrend,load_obj
+from technicals.Stocks import stock,stock_store
 import pickle
 import datetime
 from datetime import timedelta
