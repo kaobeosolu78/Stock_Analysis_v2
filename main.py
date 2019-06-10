@@ -43,7 +43,7 @@ def compartment(stock_tick,trendss,timeframe):
             trends = [trends]
         for trend in trends:
             try:
-                tprods.append(getattr(load_obj("trendprods")[trend],tf[timeframe][0]))
+                tprods.append(getattr(load_obj("trend_data")[trend],tf[timeframe][0]))
             except:
                 gtrend().update(trend)
                 trends.append(trend)
@@ -65,42 +65,3 @@ def trend_rms(trends,prices):
         rmsdiff += (x - y) ** 2  # NOTE: overflow danger if the vectors are long!
     rmsdiff = math.sqrt(rmsdiff / min(len(trends), len(prices)))
     return rmsdiff
-
-# def trend_avg(trends):
-#     trendprods = load_obj("trendprods")
-#     for trend in trends:
-
-
-# tr = ["aapl","tsla","iphone","mac","chegg","chgg","nflx","netflix","apple","tesla","banana","s and p 500","trump","house","buy","sell"]
-# # stock_store().update("NFLX")
-# # gtrend().update("nbdr")
-# st = "NFLX"
-# trr = "netflix"
-# #
-# stock = load_obj("stock_data")[st]
-# trend = load_obj("trendprods")[trr]
-#
-#
-# t = (stock.day_ts.backtester(trend.threemonth,lookahead=5,timeframe="all"))
-# # graph(test.threemonth.times,[test.threemonth.values,[t["Values"]["Trend"] for te in range(len(test.threemonth.times))]],["avg","two"])
-# graph(t["Progress Control"][0],[t["Progress"][1],t["Progress Control"][1]],["gainz","control"],False,"Profit:{}. {} days in total after {} days. (Stock:{}, Trend:{})".format(t["Profit"],t["Total Days"]-t["Total Days In"],t["After"],st,trr))
-# print(t)
-
-# vals = stock.day_ts.match_dates(trend.threemonth.times, trend.threemonth.values, "close")
-# print(trend_rms(vals["trend data"],vals["stock data"]))
-# graph(trend.threemonth.times,trend.threemonth.values)
-# temp = stock.day_ts.match_dates(trend.threemonth.times,trend.threemonth.values,"pv_delta")
-# graph(temp["trend dates"],[temp["trend data"],[1 for i in range(len(temp["trend dates"]))]],["trend","stock"],False,header="title")
-
-
-# compartment("ACB","banana","day")
-
-# temp = stock.day_ts.match_dates(trend["aapl"].threemonth.times,trend["aapl"].threemonth+[trend["iphone"].threemonth,trend["sell"].threemonth],"close")
-
-# for t in tr:
-#     print(t)
-#     temp = stock.day_ts.match_dates(trend[t].threemonth.times, trend[t].threemonth.values,"close")
-# lm = LinearRegression(normalize=True)
-# lm.fit(np.array(temp["stock data"]).reshape(-1,1),np.array(temp["trend data"]).reshape(-1,1))
-# print(lm.score(np.array(temp["stock data"]).reshape(-1,1),np.array(temp["trend data"]).reshape(-1,1)))
-
