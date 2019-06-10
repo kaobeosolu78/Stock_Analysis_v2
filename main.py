@@ -1,5 +1,5 @@
-from trends import singlegtrend,gtrend,load_obj
-from stocks import stock,stock_store
+from Sentiment.Trends import singlegtrend,gtrend,load_obj
+from Technicals.Stocks import stock,stock_store
 import plotly.plotly as py
 import numpy as np
 from plotly import tools
