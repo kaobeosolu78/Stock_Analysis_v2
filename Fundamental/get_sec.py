@@ -2,7 +2,7 @@ import bs4,requests
 import re
 import pickle
 import difflib
-from smain import graph
+from main import graph
 from datetime import datetime
 
 
@@ -234,5 +234,4 @@ def linearize_data(fund_data):
     print(len(dates))
     return final_products
 temp = (load_obj("fundamentals")["intc"].process())
-print("")
-graph(list(temp["CONSOLIDATED BALANCE SHEETS"][0]),list(temp["CONSOLIDATED BALANCE SHEETS"][1].values()))
+
