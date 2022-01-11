@@ -1,4 +1,4 @@
-# Stock_Analysis_v2---Functional
+# Stock_Analysis_v2---Deprecated
 
 The programs contained in this repository utilize elements of python and various python modules to perform both fundamental and technical analysis on different stocks. Each program runs separately right now, but the plan is to eventually combine all of it with a master script once the different components are finished.
 
